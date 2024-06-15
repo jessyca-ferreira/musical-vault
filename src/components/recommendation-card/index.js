@@ -12,8 +12,8 @@ const CardContainer = styled.div`
     margin: 2em auto;
 `
 const ImageContainer = styled.img`
-    width: 60%;
-    display: block;
+    width: 100%;
+    margin: 0;
 `;
 
 const Button = styled.button`
@@ -23,26 +23,49 @@ const Button = styled.button`
     letter-spacing: 2px;
     font-weight: 700;
     background-color: #73c72a;
-    width: 60%;
+    border: none;
+    width: 100%;
     height: 4em;
+    margin: 0;
 `
 const ImageButton = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    width: 50vh;
 `;
 const TextContainer = styled.div`
+    padding: 1em;
+    text-align: justify;
+`;
 
+const DescriptionContainer = styled.p`
+    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+`;
+
+const TitleContainer = styled.h3`
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+`;
+
+const SubtitleContainer = styled.h4`
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    margin: 0;
+    color: #73c72a;
 `;
 
 function RecommendationCard({title, subtitle, description, img}) {
     return (
         <CardContainer>
             <TextContainer>
-                <h3>{title}</h3>
-                <h4>{subtitle}</h4>
-                <p>{description}</p>
+                <TitleContainer>{title}</TitleContainer>
+                <SubtitleContainer>{subtitle}</SubtitleContainer>
+                <DescriptionContainer>{description}</DescriptionContainer>
             </TextContainer>
             <ImageButton>
                 <ImageContainer src={img} alt=""/>

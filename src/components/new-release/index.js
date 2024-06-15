@@ -50,7 +50,7 @@ function NewRelease() {
             <RecommendationCard
                 title='You may like this one'
                 subtitle='A Little Night Music'
-                description='Book and Lyrics by Stephen Sondheim'
+                description="Set in 1900 Sweden, A Little Night Music explores the tangled web of affairs centered around actress, Desirée Armfeldt, and the men who love her: a lawyer by the name of Fredrik Egerman and the Count Carl-Magnus Malcom. When the traveling actress performs in Fredrik's town, the estranged lovers' passion rekindles."
                 img={image}
             />
         </NewReleaseContainer>
