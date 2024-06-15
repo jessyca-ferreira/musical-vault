@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const SearchContainer = styled.section`
     display: flex;
@@ -19,7 +20,6 @@ const InputContainer = styled.input`
     
     }
 `;
-
 const TaglineContainer = styled.h2`
     font-size: 0.6em;
     font-family: "Poppins";
@@ -33,10 +33,16 @@ const TaglineContainer = styled.h2`
 
 
 function Search() {
+    const [searchValue, setSearchValue] = useState(''); 
+
     return (
         <SearchContainer>
             <TaglineContainer>Did you find your next musical?</TaglineContainer>    
-            <InputContainer type="text" placeholder="Search for your next listen here"/>
+            <InputContainer type="text"
+                placeholder="Search for your next listen here"
+                onBlur={(event) => setSearchValue(event.target.value)}    
+            />
+            <p>{searchValue}</p>
         </SearchContainer>
     );
 }
