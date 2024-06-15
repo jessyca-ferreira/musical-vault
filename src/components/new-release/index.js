@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { musicals } from "./database";
+import RecommendationCard from "../recommendation-card";
+import image from '../../images/hadestown.jpg'
 
 const NewReleaseContainer = styled.div`
     margin-top: 1rem;
@@ -10,6 +12,7 @@ const NewReleaseContainer = styled.div`
 const ImageContainer = styled.img`
     width: 15vw;
     margin-top: 1rem;
+    cursor: pointer;
 `;
 
 const TitleContainer = styled.h2`
@@ -44,6 +47,12 @@ function NewRelease() {
                     ))
                 }
             </ReleasesContainer>
+            <RecommendationCard
+                title='You may like this one'
+                subtitle='A Little Night Music'
+                description='Book and Lyrics by Stephen Sondheim'
+                img={image}
+            />
         </NewReleaseContainer>
     );
 }
