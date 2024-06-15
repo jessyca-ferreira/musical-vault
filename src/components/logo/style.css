@@ -2,8 +2,9 @@
 
 .logo-container {
     position: relative;
-    width: 300px;
+    width: 100vw;
     margin: 0 auto;
+    display: block;
 }
 
 #logo-picture {

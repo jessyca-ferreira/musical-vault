@@ -1,0 +1,17 @@
+.icons {
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.icon-img {
+    width: 1em;
+}

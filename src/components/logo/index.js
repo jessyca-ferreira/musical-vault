@@ -1,6 +1,5 @@
 import logo_img from '../../images/on-broadway.svg';
 import './style.css';
-import '../../index.css';
 
 function Logo() {
     return (
