@@ -27,6 +27,7 @@ const Button = styled.button`
     width: 100%;
     height: 4em;
     margin: 0;
+    cursor: pointer;
 `
 const ImageButton = styled.div`
     display: flex;
