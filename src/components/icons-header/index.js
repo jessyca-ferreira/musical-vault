@@ -1,16 +1,33 @@
 import profile from '../../images/profile.svg';
 import bag from '../../images/bag.svg';
-import './styles.css';
+import styled from 'styled-components';
 
 const icons = [profile, bag];
+const IconsContainer = styled.ul`
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+`;
+
+const IconContainer = styled.li`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+`;
+
+const Icon = styled.img`
+    width: 1em;
+`;
 
 function Icons() {
     return (
-        <ul className='icons'> 
+        <IconsContainer> 
             { icons.map( (icon) => (
-            <li className='icon'><img className='icon-img' src={icon} alt='icon'></img></li>
+            <IconContainer><Icon src={icon} alt='icon'></Icon></IconContainer>
             ) )  }
-        </ul>
+        </IconsContainer>
     );
 }
 
