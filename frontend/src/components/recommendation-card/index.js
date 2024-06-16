@@ -6,10 +6,10 @@ const CardContainer = styled.div`
     padding: 2em;
     border: 1px solid #73c72a;
     width: 70%;
-    height: 30%;
     justify-content: center;
     align-items: center;
     margin: 2em auto;
+    box-sizing: border-box;
 `
 const ImageContainer = styled.img`
     width: 100%;

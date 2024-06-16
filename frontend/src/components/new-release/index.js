@@ -7,6 +7,7 @@ const NewReleaseContainer = styled.div`
     margin-top: 1rem;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem;
 `;
 
 const ImageContainer = styled.img`
