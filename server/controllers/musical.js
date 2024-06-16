@@ -13,8 +13,13 @@ function getMusicals(req, res) {
 function getMusical(req, res) {
     try {
         const id = req.params.id;
-        const musical = getMusicalById(id);
-        res.send(musical);
+            if (id && Number(id)) {
+            const musical = getMusicalById(id);
+            res.send(musical);
+        } else {
+            res.status(422);
+            res.send('Musical ID is invalid');
+        }
     } catch (error) {
         res.status(500);
         res.send(error.message);
@@ -24,9 +29,14 @@ function getMusical(req, res) {
 function postMusical(req, res) {
     try {
         const musical = req.body;
-        addMusical(musical);
-        res.status(201);
-        res.send('Musical added');
+        if (req.body.name) {
+            addMusical(musical);
+            res.status(201);
+            res.send('Musical added');
+        } else {
+            res.status(422);
+            res.send('Musical name is required');
+        }
     }
     catch (error) {
         res.status(500);
@@ -38,9 +48,15 @@ function patchMusical(req, res) {
     try {
         const musical = req.body;
         const id = req.params.id;
-        patchMusicalField(musical, id);
-        res.status(200);
-        res.send('Musical updated');
+
+        if (id && Number(id)) {
+            patchMusicalField(musical, id);
+            res.status(200);
+            res.send('Musical updated');
+        } else {
+            res.status(422);
+            res.send('Musical ID is invalid');
+        }
     }
     catch (error) {
         res.status(500);
@@ -51,9 +67,14 @@ function patchMusical(req, res) {
 function deleteMusical(req, res) {
     try {
         const id = req.params.id;
-        deleteMusicalById(id);
-        res.status(200);
-        res.send('Musical deleted');
+            if (id && Number(id)) {
+            deleteMusicalById(id);
+            res.status(200);
+            res.send('Musical deleted');
+        } else {
+            res.status(422);
+            res.send('Musical ID is invalid');
+        }
     } catch (error) {
         res.status(500);
         res.send(error.message);
