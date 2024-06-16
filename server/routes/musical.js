@@ -1,22 +1,16 @@
 const { Router } = require('express');
-const { getMusical } = require('../controllers/musical');
+const { getMusicals, getMusical, postMusical, patchMusical, deleteMusical } = require('../controllers/musical');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    getMusical(req, res);
-});
+router.get('/', getMusicals);
 
-router.post('/', (req, res) => {
-    res.send('Got a POST request');
-});
+router.get('/:id', getMusical);
 
-router.patch('/', (req, res) => {
-    res.send('Got a PATCH request');
-});
+router.post('/', postMusical);
 
-router.delete('/', (req, res) => {
-    res.send('Got a DELETE request');
-});
+router.patch('/:id', patchMusical);
+
+router.delete('/:id', deleteMusical);
 
 module.exports = router;
