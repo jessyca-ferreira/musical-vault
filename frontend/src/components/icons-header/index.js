@@ -19,6 +19,7 @@ const IconContainer = styled.li`
 
 const Icon = styled.img`
     width: 1em;
+    cursor: pointer;
 `;
 
 function Icons() {

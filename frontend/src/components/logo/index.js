@@ -1,5 +1,6 @@
 import logo_img from '../../images/on-broadway.svg';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LogoContainer = styled.div`
     position: relative;
@@ -33,8 +34,10 @@ const SloganContainer = styled.div`
 function Logo() {
     return (
         <LogoContainer>
-          <LogoPicture id='logo-picture' src={logo_img} alt='On Broadway Logo'/>
-          <SloganContainer>Your musical vault</SloganContainer>
+            <Link to='/'>
+                <LogoPicture id='logo-picture' src={logo_img} alt='On Broadway Logo'/>
+            </Link>
+            <SloganContainer>Your musical vault</SloganContainer>
         </LogoContainer>
     );
 }

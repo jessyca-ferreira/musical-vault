@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const headerOptions = ['CATEGORIES', 'WATCH LIST', 'MY FAVORITES'];
+const headerOptions = ['CATEGORIES', 'WATCHLIST', 'FAVORITES'];
 
 const OptionsContainer = styled.ul`
     display: flex;
@@ -26,7 +27,9 @@ function Option() {
     return (
         <OptionsContainer>
             { headerOptions.map( (option) => (
-            <OptionContainer><p>{option}</p></OptionContainer>
+                <Link to={`/${option.toLowerCase()}`}>
+                    <OptionContainer>{option}</OptionContainer>
+                </Link>
             ) ) }
         </OptionsContainer>
     );
